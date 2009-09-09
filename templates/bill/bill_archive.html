@@ -1,0 +1,26 @@
+{% extends "base_entries.html" %}
+
+{% block title %}{{ block.super }} | Latest entries{% endblock %}
+
+{% block content %}
+
+<p>This is a list of the latest {{ latest.count }} bills entered.</p>
+
+<table>
+
+{% for entry in latest %}
+    <tr>
+        <td>{{ entry.payee }}</td>
+        <td>{{ entry.amount_due }}</td>
+        <td>{{ entry.due_date|date:"F j, Y" }}</td>
+    </tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+{% block whatis %}
+<p>This is a list of the latest {{ latest.count }} bills entered.</p>
+{% endblock %}
