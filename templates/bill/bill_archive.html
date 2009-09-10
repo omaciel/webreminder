@@ -1,26 +1,60 @@
-{% extends "base_entries.html" %}
-
-{% block title %}{{ block.super }} | Latest entries{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 
-<p>This is a list of the latest {{ latest.count }} bills entered.</p>
+    <div id="options">
+        <ul>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Paid</a></li>
+            <li><a href="#">Delete</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Export</a></li>
+            <li><a href="#">Statistics</a></li>
+        <ul>
+    </div><!--end options-->
 
-<table>
+    <div id="bills">
 
-{% for entry in latest %}
-    <tr>
-        <td>{{ entry.payee }}</td>
-        <td>{{ entry.amount_due }}</td>
-        <td>{{ entry.due_date|date:"F j, Y" }}</td>
-    </tr>
+        <table id="myTable">
+            <colgroup></colgroup>
+            <colgroup></colgroup>
+            <colgroup></colgroup>
+            <colgroup></colgroup>
+            <colgroup></colgroup>
+            <colgroup></colgroup>
 
-{% endfor %}
+            <thead>	
+                <tr>
+                    <th>Action</th>
+                    <th>Due Date</th>
+                    <th>Amount</th>
+                    <th>Payee</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
 
-</table>
+            <tbody>
 
-{% endblock %}
+                {% for entry in latest %}
+                    <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>{{ entry.due_date|date:"F j, Y" }}</td>
+                        <td>{{ entry.amount_due }}</td>
+                        <td>{{ entry.payee }}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
 
-{% block whatis %}
-<p>This is a list of the latest {{ latest.count }} bills entered.</p>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div><!--end bills-->
+    <div id="footer">
+        <p><a href="#">Back to the top</a></p>
+    </div>
+
 {% endblock %}

@@ -1,0 +1,122 @@
+<head>
+    <meta charset="UTF-8">
+    <title>WebReminder: {% block title %}{% endblock %}</title>
+
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        google.load("jquery", "1.3.2");
+    </script>
+
+    <script type="text/javascript" src="js/highlight.js"></script>
+    <script type="text/javascript" src="js/table.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() 
+            { 
+                $("#myTable").tablesorter(); 
+            } 
+        ); 
+    </script>
+
+
+    <style>
+
+        h1 a{
+            display:block;
+            background: url('billreminder.gif') no-repeat;
+            width:135px;
+            height:19px;
+            text-indent:-50000px;
+            overflow:hidden;
+            float:right;
+            margin-top:-10px;
+        }
+
+        #container{
+            padding-top:20px;
+            font-family:Verdana, sans-serif ;
+            letter-spacing:-.08em;
+            font-size:.8em;
+            width:736px;
+            margin:auto;
+        }
+
+        table{
+            border-collapse:collapse;
+            width:100%;
+        }
+
+        thead{
+            background:black;
+            color:white;
+        }
+
+        td,th{
+            border-bottom:1px solid gray;
+            padding:5px;
+            text-align:left;
+        }
+
+        tr.par{
+            background:gray;
+            }
+
+        .hover {
+            background-color: #eee;
+        }
+
+        /*menu*/
+
+        *{
+            margin:0 0;
+            padding:0 0;
+        }
+
+        #options{
+            margin-left:-9px;
+            padding:0 0 18px;
+            margin-top:-2px;
+        }
+
+        #options ul{
+            list-style:none;
+        }
+
+        #options ul li{
+            display:inline;
+            margin-left:10px;
+        }
+
+        #options ul li a{
+        text-decoration:none;
+        color:black;
+        }
+
+        #options ul li a:hover{
+        text-decoration:underline;
+        }
+
+
+        #footer{
+            background:black;
+            padding:10px 0;
+            margin:0 0 10px 0;
+            }
+
+
+        #footer a{
+            color:#fff;
+            margin:0 0 0 10px;
+        }
+
+        #col1{
+            width:68px;
+        }
+
+        td input{
+            background:red;
+        }
+
+    </style>
+
+</head>
