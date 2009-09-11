@@ -41,10 +41,10 @@
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>{{ entry.due_date|date:"F j, Y" }}</td>
-                        <td>{{ entry.amount_due }}</td>
+                        <td>{{ entry.amount_due|floatformat:2 }}</td>
                         <td>{{ entry.payee }}</td>
                         <td></td>
-                        <td></td>
+                        <td>{{ entry.category }}</td>
                     </tr>
 
                 {% endfor %}
