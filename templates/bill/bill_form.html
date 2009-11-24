@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "options.html" %}
+<p>Fill out the form to add a new Bill.</p>
+<form action="/bills/new/" method="post" accept-charset="utf-8">
+	{{ form.as_p }}
+	<p><input type="submit" value="Add &rarr;"></p>
+</form>
+{% endblock %}
