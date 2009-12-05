@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Login</p>
+<form action="/login/" method="post" accept-charset="utf-8">
+	{{ form.as_p }}
+
+	<p><input type="submit" value="Login &rarr;"></p>
+	<input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock %}

@@ -5,6 +5,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^signup/', "webreminder.registration.views.signup"),
+    (r'^login/', 'django.contrib.auth.views.login'),
+    (r'^logout/', 'django.contrib.auth.views.logout', {"next_page": "/"}),
+    
     (r'^admin/(.*)', admin.site.root),
     (r'^bills/', include('bill.urls.bills')),
 )
